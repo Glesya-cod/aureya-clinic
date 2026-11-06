@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Аурея — клиника эстетической медицины в Екатеринбурге</title>
+<meta name="description" content="Клиника эстетической медицины «Аурея»: инъекционная, лазерная, эстетическая и аппаратная косметология, лечение акне. Врачи, оборудование, прайс и запись на консультацию.">
+<style>
+:root{
+  --bg:#FAF5EC;
+  --surface:#FFFCF6;
+  --sand:#F1E7D7;
+  --sand-deep:#E8DCC8;
+  --edge:#E1D4BF;
+  --ink:#2B2620;
+  --ink-soft:#4A4238;
+  --muted:#7E7060;
+  --gold:#A9865B;
+  --gold-deep:#8A6A42;
+  --radius:3px;
+  --serif:"Georgia","Iowan Old Style","Times New Roman",serif;
+  --sans:"Segoe UI",-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:104px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;line-height:1.15;letter-spacing:-.01em}
+p{margin:0}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+
+.topbar{background:var(--sand);border-bottom:1px solid var(--edge);font-size:13.5px;color:var(--ink-soft)}
+.topbar .wrap{display:flex;gap:28px;align-items:center;justify-content:space-between;min-height:42px;flex-wrap:wrap;padding-block:6px}
+.topbar .meta{display:flex;gap:28px;flex-wrap:wrap;align-items:center}
+.topbar a:hover{color:var(--gold-deep)}
+.socials{display:flex;gap:14px;align-items:center}
+.socials a{display:flex;align-items:center;gap:6px}
+.socials svg{width:15px;height:15px;fill:currentColor}
+
+header.site{position:sticky;top:0;z-index:60;background:rgba(250,245,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--edge)}
+header.site .wrap{display:flex;align-items:center;gap:34px;min-height:76px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand .mark{width:40px;height:40px;border:1px solid var(--gold);display:grid;place-items:center;border-radius:50%;font-family:var(--serif);font-size:19px;color:var(--gold-deep)}
+.brand b{display:block;font-family:var(--serif);font-size:21px;font-weight:400;letter-spacing:.14em;text-transform:uppercase}
+.brand small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+nav.main{margin-left:auto}
+nav.main ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:14px}
+nav.main a{padding-block:6px;border-bottom:1px solid transparent;white-space:nowrap}
+nav.main a:hover{border-color:var(--gold);color:var(--gold-deep)}
+.head-actions{display:flex;align-items:center;gap:14px;flex:none}
+.head-phone{font-size:15px;letter-spacing:.01em;white-space:nowrap}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--edge);background:var(--surface);border-radius:var(--radius);align-items:center;justify-content:center}
+.burger span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--ink)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border:1px solid var(--gold-deep);background:var(--gold-deep);color:#FDF8EF;font-size:14.5px;letter-spacing:.02em;border-radius:var(--radius);transition:background .18s ease,color .18s ease,border-color .18s ease}
+.btn:hover{background:#755934;border-color:#755934}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--edge)}
+.btn.ghost:hover{border-color:var(--gold-deep);color:var(--gold-deep);background:transparent}
+.btn.small{padding:10px 18px;font-size:13.5px}
+
+.hero{padding-block:clamp(40px,6vw,76px) clamp(56px,7vw,96px);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,5vw,72px);align-items:center}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:22px}
+h1{font-size:clamp(2.3rem,4.6vw,3.9rem)}
+.rotator{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.6vw,1.32rem);color:var(--gold-deep);margin-top:18px;min-height:1.9em;display:block}
+.rotator span{opacity:0;transition:opacity .5s ease;position:absolute}
+.rotator{position:relative}
+.rotator span.active{opacity:1;position:relative}
+.hero p.lead{margin-top:24px;max-width:46ch;color:var(--ink-soft)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.facts{display:flex;gap:34px;flex-wrap:wrap;margin-top:46px;padding-top:26px;border-top:1px solid var(--edge)}
+.facts div{font-size:14px;color:var(--muted);max-width:150px;line-height:1.45}
+.facts b{display:block;font-family:var(--serif);font-size:26px;color:var(--ink);font-weight:400;margin-bottom:4px}
+
+.hero-media{position:relative}
+.frame{border:1px solid var(--gold);padding:10px;border-radius:var(--radius);background:var(--surface)}
+.slides{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius);background:var(--sand)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.slides img.on{opacity:1}
+.slide-dots{display:flex;gap:9px;margin-top:18px;justify-content:center}
+.slide-dots button{width:34px;height:3px;background:var(--edge);border-radius:2px;padding:0}
+.slide-dots button.on{background:var(--gold-deep)}
+.hero-badge{position:absolute;left:-18px;bottom:56px;background:var(--surface);border:1px solid var(--edge);padding:16px 22px;border-radius:var(--radius);box-shadow:0 18px 40px -30px rgba(43,38,32,.5);max-width:220px}
+.hero-badge b{display:block;font-family:var(--serif);font-size:16px;margin-bottom:3px}
+.hero-badge span{font-size:12.5px;color:var(--muted);line-height:1.4;display:block}
+
+section{padding-block:clamp(56px,7vw,96px)}
+section.alt{background:var(--sand);border-block:1px solid var(--edge)}
+.head{display:flex;gap:40px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(30px,4vw,52px);flex-wrap:wrap}
+.head h2{font-size:clamp(1.8rem,3vw,2.6rem)}
+.head .lead{max-width:48ch;color:var(--ink-soft);font-size:16px;margin-top:12px}
+.head .num{font-family:var(--serif);font-size:14px;color:var(--gold-deep);letter-spacing:.18em;display:block;margin-bottom:14px}
+
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,70px)}
+.about-grid h3{font-size:1.3rem;margin-bottom:12px}
+.about-grid p + p{margin-top:14px}
+.about-grid p{color:var(--ink-soft)}
+.adv{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.adv li{padding-bottom:16px;border-bottom:1px solid var(--edge);display:grid;grid-template-columns:34px 1fr;gap:14px}
+.adv li:last-child{border-bottom:0;padding-bottom:0}
+.adv .n{font-family:var(--serif);color:var(--gold-deep);font-size:14px;padding-top:3px}
+.adv b{display:block;font-weight:600;font-size:15.5px;margin-bottom:3px}
+.adv span{font-size:14.5px;color:var(--muted);line-height:1.5}
+
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;margin-top:clamp(34px,4vw,54px);border-top:1px solid var(--edge)}
+.docs a{display:flex;gap:14px;align-items:flex-start;padding:20px 22px 20px 0;border-bottom:1px solid var(--edge);font-size:15px;color:var(--ink-soft);transition:color .16s ease}
+.docs a:hover{color:var(--gold-deep)}
+.docs svg{width:18px;height:18px;flex:none;margin-top:4px;stroke:var(--gold);fill:none;stroke-width:1.4}
+.docs small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+
+.svc{border-top:1px solid var(--edge)}
+.svc-item{border-bottom:1px solid var(--edge)}
+.svc-btn{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;width:100%;padding:26px 0;text-align:left}
+.svc-btn h3{font-size:clamp(1.15rem,1.9vw,1.45rem);transition:color .16s ease}
+.svc-btn:hover h3{color:var(--gold-deep)}
+.svc-btn .meta{display:block;font-family:var(--sans);font-size:13.5px;color:var(--muted);margin-top:6px}
+.plus{width:30px;height:30px;border:1px solid var(--edge);border-radius:50%;position:relative;flex:none;justify-self:end}
+.plus::before,.plus::after{content:"";position:absolute;inset:50% auto auto 50%;width:11px;height:1px;background:var(--gold-deep);transform:translate(-50%,-50%)}
+.plus::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .22s ease}
+.svc-btn[aria-expanded="true"] .plus::after{transform:translate(-50%,-50%) rotate(0)}
+.svc-panel{display:none;padding:0 0 28px}
+.svc-panel.open{display:block}
+.svc-panel p{color:var(--ink-soft);max-width:74ch;margin-bottom:18px}
+.svc-rows{display:grid;gap:0;border-top:1px solid var(--edge)}
+.svc-row{display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center;padding:13px 0;border-bottom:1px solid rgba(225,212,191,.7);font-size:15px}
+.svc-row .dur{color:var(--muted);font-size:13.5px;white-space:nowrap}
+.svc-row .price{font-family:var(--serif);color:var(--ink);white-space:nowrap}
+.svc-row a.book{font-size:13.5px;color:var(--gold-deep);border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap}
+
+.eq{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.eq-card{background:var(--surface);border:1px solid var(--edge);border-radius:var(--radius);padding:26px 24px 24px;display:flex;flex-direction:column;gap:10px;min-height:210px;transition:border-color .18s ease,transform .18s ease}
+.eq-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.eq-card .idx{font-family:var(--serif);font-size:12.5px;letter-spacing:.18em;color:var(--gold-deep)}
+.eq-card h3{font-size:1.06rem;line-height:1.3}
+.eq-card p{font-size:14.5px;color:var(--muted);margin-top:auto}
+.eq-card .tag{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);border-top:1px solid var(--edge);padding-top:12px;margin-top:12px}
+
+.docs-cta{margin-top:34px}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.spec-card{background:var(--surface);border:1px solid var(--edge);border-radius:var(--radius);padding:28px 24px;display:flex;flex-direction:column;gap:12px}
+.spec-card .mono{width:64px;height:64px;border-radius:50%;background:var(--sand);border:1px solid var(--edge);display:grid;place-items:center;font-family:var(--serif);font-size:21px;color:var(--gold-deep);letter-spacing:.05em}
+.spec-card h3{font-size:1.15rem}
+.spec-card .role{font-size:14px;color:var(--muted);line-height:1.45}
+.spec-card .exp{font-size:13px;color:var(--gold-deep);letter-spacing:.06em}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.chips span{font-size:12.5px;color:var(--ink-soft);background:var(--sand);border:1px solid var(--edge);padding:4px 10px;border-radius:100px}
+.spec-card .book{margin-top:auto;font-size:13.5px;color:var(--gold-deep);border-bottom:1px solid var(--gold);align-self:flex-start;padding-bottom:1px}
+
+.promos{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+.promo{background:var(--surface);border:1px solid var(--edge);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:12px;position:relative}
+.promo .badge{font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2.1rem);color:var(--gold-deep);line-height:1}
+.promo h3{font-size:1.1rem}
+.promo p{font-size:14.5px;color:var(--muted)}
+.promo .until{margin-top:auto;padding-top:16px;border-top:1px solid var(--edge);font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+.gift{margin-top:26px;background:var(--sand-deep);border:1px solid var(--edge);border-radius:var(--radius);padding:clamp(26px,4vw,44px);display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}
+.gift h3{font-size:clamp(1.3rem,2.2vw,1.75rem);margin-bottom:10px}
+.gift p{color:var(--ink-soft);max-width:62ch;font-size:15px}
+
+.price-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:26px}
+.tab{border:1px solid var(--edge);background:var(--surface);padding:9px 16px;border-radius:100px;font-size:13.5px;color:var(--ink-soft);transition:all .16s ease}
+.tab:hover{border-color:var(--gold)}
+.tab[aria-pressed="true"]{background:var(--gold-deep);border-color:var(--gold-deep);color:#FDF8EF}
+.price-list{border-top:1px solid var(--edge)}
+.price-row{display:grid;grid-template-columns:1fr 130px 120px;gap:20px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--edge)}
+.price-row .grp{font-size:12px;color:var(--muted);letter-spacing:.04em;grid-column:1/-1;margin-bottom:-6px;display:none}
+.price-row strong{font-weight:400;font-size:16px}
+.price-row .d{color:var(--muted);font-size:13.5px}
+.price-row .p{font-family:var(--serif);font-size:17px;text-align:right;white-space:nowrap}
+.price-note{margin-top:22px;font-size:13.5px;color:var(--muted);max-width:70ch}
+.empty{padding:28px 0;color:var(--muted)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px)}
+.info dl{display:grid;grid-template-columns:auto 1fr;gap:14px 22px;margin:0;font-size:15.5px}
+.info dt{color:var(--muted);font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
+.info dd{margin:0}
+.info dd a:hover{color:var(--gold-deep);border-bottom:1px solid var(--gold)}
+.map{border:1px solid var(--edge);border-radius:var(--radius);background:var(--sand);overflow:hidden;display:flex;flex-direction:column}
+.map .art{position:relative;flex:1;min-height:250px;background:
+  linear-gradient(rgba(169,134,91,.14) 1px,transparent 1px) 0 0/100% 34px,
+  linear-gradient(90deg,rgba(169,134,91,.14) 1px,transparent 1px) 0 0/34px 100%,
+  radial-gradient(circle at 62% 46%,rgba(169,134,91,.4) 0 6px,transparent 7px),
+  var(--sand)}
+.map .art span{position:absolute;left:50%;top:46%;transform:translate(-50%,10px);background:var(--surface);border:1px solid var(--edge);font-size:12.5px;padding:5px 11px;border-radius:100px}
+.map .foot{padding:18px 22px;background:var(--surface);border-top:1px solid var(--edge);display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;font-size:14px}
+.req{margin-top:34px;padding-top:22px;border-top:1px solid var(--edge);font-size:13.5px;color:var(--muted);line-height:1.8}
+
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+.review{background:var(--surface);border:1px solid var(--edge);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:14px}
+.review .stars{color:var(--gold);letter-spacing:.18em;font-size:13px}
+.review p{font-size:15px;color:var(--ink-soft);flex:1}
+.review footer{font-size:13px;color:var(--muted);border-top:1px solid var(--edge);padding-top:12px}
+.reviews-note{font-size:12.5px;color:var(--muted);margin-top:18px}
+
+footer.site{background:var(--ink);color:#E9DFD0;padding-block:56px 26px}
+footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:34px}
+footer.site h4{font-family:var(--serif);font-size:15px;color:#F6EEE1;margin-bottom:16px}
+footer.site a,footer.site p,footer.site li{font-size:14px;color:#C9BDAB;line-height:1.9}
+footer.site a:hover{color:#F6EEE1}
+footer.site ul{list-style:none;margin:0;padding:0}
+footer.site .brand b{color:#F6EEE1}
+footer.site .brand small{color:#A99C89}
+footer.site .socials a{color:#C9BDAB}
+footer.site .bottom{margin-top:44px;padding-top:20px;border-top:1px solid rgba(233,223,208,.16);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12.5px;color:#A99C89}
+
+dialog{border:1px solid var(--edge);border-radius:var(--radius);padding:0;background:var(--surface);color:var(--ink);max-width:520px;width:calc(100% - 32px);box-shadow:0 40px 80px -40px rgba(43,38,32,.55)}
+dialog::backdrop{background:rgba(43,38,32,.45);backdrop-filter:blur(2px)}
+.dlg{padding:clamp(26px,4vw,40px);position:relative}
+.dlg h3{font-size:1.55rem;margin-bottom:10px}
+.dlg p{color:var(--ink-soft);font-size:15px;margin-bottom:18px}
+.dlg .phone{font-family:var(--serif);font-size:clamp(1.5rem,3vw,1.9rem);color:var(--gold-deep);display:inline-block;margin-bottom:6px}
+.dlg dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:14px;margin:18px 0 0;padding-top:18px;border-top:1px solid var(--edge)}
+.dlg dt{color:var(--muted)}
+.dlg dd{margin:0}
+.dlg .close{position:absolute;right:14px;top:12px;width:38px;height:38px;border:1px solid var(--edge);border-radius:50%;display:grid;place-items:center;font-size:18px;color:var(--muted)}
+.dlg .close:hover{border-color:var(--gold);color:var(--gold-deep)}
+.note{font-size:12.5px;color:var(--muted);margin-top:14px}
+
+.to-top{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border:1px solid var(--edge);background:var(--surface);border-radius:50%;display:grid;place-items:center;color:var(--gold-deep);box-shadow:0 12px 30px -18px rgba(43,38,32,.6);opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:50}
+.to-top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:1040px){
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--surface);border-bottom:1px solid var(--edge);padding:18px 24px 24px;margin:0}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;gap:0;font-size:16px}
+  nav.main li{border-bottom:1px solid var(--edge)}
+  nav.main li:last-child{border-bottom:0}
+  nav.main a{display:block;padding:14px 0;border:0}
+  .burger{display:inline-flex}
+  .head-phone{display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-media{order:-1;max-width:520px;width:100%}
+  .slides{aspect-ratio:5/4}
+  .hero-badge{display:none}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .gift{grid-template-columns:1fr}
+  footer.site .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{width:calc(100% - 36px)}
+  header.site .wrap{gap:10px;min-height:66px}
+  .brand{gap:9px;min-width:0}
+  .brand b{font-size:18px;letter-spacing:.1em}
+  .brand small{display:none}
+  .brand .mark{width:34px;height:34px;font-size:16px}
+  .head-actions{gap:8px;margin-left:auto}
+  .head-actions .btn.small{padding:10px 12px;font-size:13px}
+  .burger{width:38px;height:38px}
+  .svc-btn{gap:10px}
+  .topbar .meta span:nth-child(2){display:none}
+  .facts{gap:22px;margin-top:32px}
+  .facts b{font-size:22px}
+  .svc-row{grid-template-columns:1fr auto;gap:10px}
+  .svc-row .dur{display:none}
+  .price-row{grid-template-columns:1fr auto;gap:6px 14px}
+  .price-row .d{display:none}
+  .price-row .grp{display:block}
+  footer.site .cols{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .slides img{transition:none}
+}
+@media print{
+  header.site,.topbar,.to-top,.hero-cta,.slide-dots,.svc-btn .plus{display:none}
+  body{background:#fff}
+  section{padding-block:18px;break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="meta">
+      <span>г. Екатеринбург, ул. Примерная, 12</span>
+      <span>Пн–Сб 9:00–21:00, Вс 10:00–18:00</span>
+    </div>
+    <div class="meta">
+      <a href="tel:+73430000000">+7 (343) 000-00-00</a>
+      <span class="socials">
+        <a href="https://vk.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.8 17.6c-5.6 0-8.9-3.9-9-10.3h2.9c.1 4.7 2.2 6.7 3.8 7.1V7.3h2.7v4.1c1.6-.2 3.2-1.9 3.8-4.1h2.7c-.4 2.7-2 4.4-3.2 5.1 1.2.6 3 2.1 3.7 5.2h-3c-.5-1.7-1.9-3-3.8-3.2v3.2h-.6z"/></svg>ВКонтакте</a>
+        <a href="https://t.me" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 19 19.1c-.2 1-.8 1.2-1.6.8l-4.4-3.3-2.1 2c-.2.2-.4.4-.8.4l.3-4.4 8-7.2c.3-.3 0-.5-.5-.2L7.2 12.6l-4.2-1.3c-.9-.3-.9-.9.2-1.3l18.3-7c.8-.3 1.4.2 1.4 1.3z"/></svg>Telegram</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Аурея — на главную">
+      <span class="mark" aria-hidden="true">А</span>
+      <span><b>Аурея</b><small>клиника эстетической медицины</small></span>
+    </a>
+    <nav class="main" id="mainnav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#about">О клинике</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#equipment">Оборудование</a></li>
+        <li><a href="#doctors">Специалисты</a></li>
+        <li><a href="#promo">Акции</a></li>
+        <li><a href="#price">Прайс</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="head-actions">
+      <span class="head-phone">+7 (343) 000-00-00</span>
+      <button class="btn small" type="button" data-open-booking>Записаться</button>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mainnav"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Клиника эстетической медицины · Екатеринбург</div>
+      <h1>Ваше здоровье —<br>наш приоритет</h1>
+      <span class="rotator" aria-live="polite">
+        <span class="active">Ваша красота — наша профессия</span>
+        <span>Красота в заботливых руках</span>
+        <span>Гармония прикосновения и эстетики</span>
+        <span>Прикосновение, которое преображает</span>
+      </span>
+      <p class="lead">Медицинская косметология без спешки: диагностика кожи, честный план лечения и процедуры на сертифицированном оборудовании. Ведём пациента от первой консультации до результата, который видно.</p>
+      <div class="hero-cta">
+        <button class="btn" type="button" data-open-booking>Записаться на консультацию</button>
+        <a class="btn ghost" href="#services">Смотреть услуги</a>
+      </div>
+      <div class="facts">
+        <div><b>14 лет</b>практики клиники</div>
+        <div><b>9</b>аппаратов в работе</div>
+        <div><b>4</b>врача постоянного приёма</div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="frame">
+        <div class="slides">
+          <img src="assets/hero-interior.jpg" alt="Светлый интерьер клиники в бежевых тонах" class="on">
+          <img src="assets/care-procedure.jpg" alt="Косметолог выполняет уходовую процедуру">
+          <img src="assets/device-room.jpg" alt="Косметологический аппарат в процедурном кабинете">
+        </div>
+      </div>
+      <div class="slide-dots" role="tablist" aria-label="Фотографии клиники">
+        <button type="button" class="on" role="tab" aria-selected="true" aria-label="Фото 1: интерьер"></button>
+        <button type="button" role="tab" aria-selected="false" aria-label="Фото 2: процедура"></button>
+        <button type="button" role="tab" aria-selected="false" aria-label="Фото 3: оборудование"></button>
+      </div>
+      <div class="hero-badge">
+        <b>Лицензия</b>
+        <span>Медицинская деятельность, дерматовенерология и косметология</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="num">01 / О клинике</span>
+        <h2>Клиника, в которой<br>не торопят</h2>
+        <p class="lead">Мы начинали как небольшой кабинет косметологии и выросли в клинику эстетической медицины с полным парком аппаратов и собственной дерматологической службой.</p>
+      </div>
+      <a class="btn ghost" href="#contacts">Контакты и запись</a>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <h3>История клиники</h3>
+        <p>Клиника открылась в 2012 году с одной процедурной и двух врачей. Первым направлением стала инъекционная косметология: пациенты приходили за результатом, который не меняет лицо, а возвращает ему отдохнувший вид.</p>
+        <p>Постепенно добавились лазерные методики, аппаратная косметология и лечение акне. Сегодня «Аурея» — это четыре кабинета, девять аппаратов и команда, в которой дерматолог и косметолог ведут пациента вместе.</p>
+        <p>Наша миссия: чтобы решение о процедуре принималось после диагностики, а не после рекламы. Мы говорим о противопоказаниях так же подробно, как о результате.</p>
+      </div>
+      <div>
+        <ul class="adv">
+          <li><span class="n">01</span><div><b>Врачебный подход</b><span>Каждую процедуру назначает и выполняет врач с медицинским образованием и действующим сертификатом.</span></div></li>
+          <li><span class="n">02</span><div><b>Диагностика до процедуры</b><span>Осмотр, сбор анамнеза и определение фототипа — до обсуждения методики и стоимости.</span></div></li>
+          <li><span class="n">03</span><div><b>Своё оборудование</b><span>Аппараты в собственности клиники, сервисное обслуживание по регламенту производителя.</span></div></li>
+          <li><span class="n">04</span><div><b>Прозрачная цена</b><span>Стоимость и количество процедур в курсе известны до начала лечения, без «доплат по ходу».</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="docs">
+      <a href="#contacts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg><div>Лицензии и сертификаты<small>Выписка из реестра лицензий, сертификаты врачей</small></div></a>
+      <a href="#contacts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg><div>Правила предоставления медицинских услуг<small>Постановление Правительства РФ № 736, образец договора</small></div></a>
+      <a href="#contacts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg><div>Политика конфиденциальности<small>Обработка данных на сайте и в клинике</small></div></a>
+      <a href="#contacts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg><div>Согласие на обработку персональных данных<small>Форма для заполнения на приёме</small></div></a>
+      <a href="#contacts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg><div>Закон о защите прав потребителей<small>Права пациента и порядок обращения</small></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="num">02 / Услуги</span>
+        <h2>Четыре направления<br>и лечение акне</h2>
+        <p class="lead">Выберите группу, чтобы увидеть состав услуг, длительность процедуры и стоимость. Точную программу врач составляет на консультации.</p>
+      </div>
+      <a class="btn ghost" href="#price">Полный прайс</a>
+    </div>
+
+    <div class="svc">
+      <div class="svc-item">
+        <button class="svc-btn" type="button" aria-expanded="true" aria-controls="svc-1">
+          <div><h3>Инъекционная косметология</h3><span class="meta">6 услуг · от 30 до 60 минут</span></div>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="svc-panel open" id="svc-1">
+          <p>Работа с качеством кожи и объёмом тканей препаратами с регистрационными удостоверениями. Врач подбирает препарат по показаниям, а не по акции.</p>
+          <div class="svc-rows">
+            <div class="svc-row"><span>Биоревитализация</span><span class="dur">40–60 мин</span><span class="price">от 12 000 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Ботулинотерапия</span><span class="dur">30 мин</span><span class="price">от 8 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Плазмотерапия</span><span class="dur">50 мин</span><span class="price">от 7 900 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Коллагенотерапия</span><span class="dur">40 мин</span><span class="price">от 14 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Мезотерапия лица</span><span class="dur">40 мин</span><span class="price">от 5 900 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Контурная пластика</span><span class="dur">45 мин</span><span class="price">от 16 000 ₽</span><a class="book" href="#price">В прайс</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-2">
+          <div><h3>Лазерная косметология</h3><span class="meta">5 услуг · от 20 до 90 минут</span></div>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="svc-panel" id="svc-2">
+          <p>Лазерные методики на диодных и александритовых аппаратах. Курс и интервалы между процедурами зависят от зоны, фототипа и цели лечения.</p>
+          <div class="svc-rows">
+            <div class="svc-row"><span>Лазерная шлифовка</span><span class="dur">60–90 мин</span><span class="price">от 24 000 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Лазерное омоложение</span><span class="dur">45 мин</span><span class="price">от 15 000 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Удаление рубцов, шрамов и пигментных пятен</span><span class="dur">30–60 мин</span><span class="price">от 6 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Лечение постакне</span><span class="dur">40 мин</span><span class="price">от 9 800 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Лазерная эпиляция</span><span class="dur">15–60 мин</span><span class="price">от 3 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-3">
+          <div><h3>Эстетическая косметология</h3><span class="meta">4 услуги · от 40 до 90 минут</span></div>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="svc-panel" id="svc-3">
+          <p>Уходовые программы для лица и тела: очищение, питание, работа с тонусом. Подходят как самостоятельный уход и как подготовка кожи к аппаратным процедурам.</p>
+          <div class="svc-rows">
+            <div class="svc-row"><span>Комплексные уходы за лицом</span><span class="dur">60–90 мин</span><span class="price">от 6 900 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Комплексные уходы за телом</span><span class="dur">60–90 мин</span><span class="price">от 8 400 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Неинвазивная карбокситерапия</span><span class="dur">40 мин</span><span class="price">от 4 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>HydraFacial</span><span class="dur">60 мин</span><span class="price">от 9 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-4">
+          <div><h3>Аппаратная косметология</h3><span class="meta">6 услуг · от 20 до 90 минут</span></div>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="svc-panel" id="svc-4">
+          <p>RF- и ультразвуковые методики, фото- и IPL-терапия. Работаем по протоколам производителей, с обязательной консультацией перед курсом.</p>
+          <div class="svc-rows">
+            <div class="svc-row"><span>Ультразвуковой SMAS-лифтинг</span><span class="dur">60–90 мин</span><span class="price">от 28 000 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Фототерапия</span><span class="dur">30 мин</span><span class="price">от 7 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>IPL-терапия</span><span class="dur">30–45 мин</span><span class="price">от 8 900 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Микроигольчатый RF-лифтинг</span><span class="dur">60 мин</span><span class="price">от 11 000 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Лазерная эпиляция</span><span class="dur">15–60 мин</span><span class="price">от 3 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>HydraFacial</span><span class="dur">60 мин</span><span class="price">от 9 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-5">
+          <div><h3>Лечение акне и постакне</h3><span class="meta">Персонализированное лечение и комплексный подход</span></div>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="svc-panel" id="svc-5">
+          <p>Ведём пациента дерматолог и косметолог вместе: подбираем наружную терапию, при необходимости — системную, и добавляем аппаратные методики по показаниям. План пересматривается каждые 6–8 недель.</p>
+          <div class="svc-rows">
+            <div class="svc-row"><span>Консультация дерматолога</span><span class="dur">40 мин</span><span class="price">2 500 ₽</span><a class="book" href="#price">В прайс</a></div>
+            <div class="svc-row"><span>Программа лечения акне (месяц ведения)</span><span class="dur">по плану</span><span class="price">от 18 000 ₽</span><a class="book" href="#price">В прайс</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipment">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="num">03 / Оборудование</span>
+        <h2>Девять аппаратов,<br>которые работают каждый день</h2>
+        <p class="lead">Всё оборудование зарегистрировано как медицинское изделие, обслуживается по регламенту и закреплено за конкретными врачами.</p>
+      </div>
+    </div>
+    <div class="eq">
+      <article class="eq-card"><span class="idx">01</span><h3>Аппаратная платформа ENDYMED</h3><p>Микроигольчатый RF-лифтинг и 3DEEP-технология: работа с тонусом, плотностью кожи и локальными жировыми изменениями.</p><span class="tag">RF-лифтинг</span></article>
+      <article class="eq-card"><span class="idx">02</span><h3>COCOON MEDICAL PRIMELASE</h3><p>Медицинский диодный лазер для лазерной эпиляции и работы с сосудистыми изменениями кожи.</p><span class="tag">Диодный лазер</span></article>
+      <article class="eq-card"><span class="idx">03</span><h3>COCOON MEDICAL ELYSION</h3><p>Диодный лазер в конфигурации для эпиляции на больших зонах и деликатных участках.</p><span class="tag">Диодный лазер</span></article>
+      <article class="eq-card"><span class="idx">04</span><h3>Ellipse Nordlys</h3><p>Многофункциональная физиотерапевтическая система для лечения дефектов кожи: фототерапия, сосудистые и пигментные изменения.</p><span class="tag">IPL / фототерапия</span></article>
+      <article class="eq-card"><span class="idx">05</span><h3>SYNCHRO MOTUS AX</h3><p>Александритовый лазер с технологией подвижного импульса — комфортная эпиляция с минимальной потребностью в анестезии.</p><span class="tag">Александритовый лазер</span></article>
+      <article class="eq-card"><span class="idx">06</span><h3>Ulthera System</h3><p>Ультразвуковой SMAS-лифтинг: воздействие на глубокие слои без нарушения целостности кожи.</p><span class="tag">SMAS-лифтинг</span></article>
+      <article class="eq-card"><span class="idx">07</span><h3>HydraFacial</h3><p>Гидродермабразия с одновременным введением сывороток: очищение, увлажнение, работа с расширенными порами.</p><span class="tag">Гидродермабразия</span></article>
+      <article class="eq-card"><span class="idx">08</span><h3>Гезатон</h3><p>Оборудование для ультразвуковой терапии и ультрафонофореза в дерматологии и косметологии.</p><span class="tag">Ультразвук</span></article>
+      <article class="eq-card"><span class="idx">09</span><h3>ШМЕЛЬ-1000</h3><p>Электрохирургический высокочастотный аппарат для удаления доброкачественных новообразований кожи.</p><span class="tag">Электрохирургия</span></article>
+    </div>
+  </div>
+</section>
+
+<section id="doctors" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="num">04 / Специалисты</span>
+        <h2>Врачи, к которым<br>возвращаются</h2>
+        <p class="lead">У каждого специалиста — своё направление и своё расписание. На консультацию можно записаться к конкретному врачу.</p>
+      </div>
+      <button class="btn ghost" type="button" data-open-booking>Записаться к врачу</button>
+    </div>
+    <div class="spec">
+      <article class="spec-card">
+        <span class="mono" aria-hidden="true">АВ</span>
+        <h3>Анна Верещагина</h3>
+        <p class="role">Главный врач, дерматовенеролог, косметолог</p>
+        <span class="exp">Стаж 16 лет</span>
+        <div class="chips"><span>Инъекционная косметология</span><span>Контурная пластика</span><span>Лазерные методики</span></div>
+        <a class="book" href="#price">Расписание и запись</a>
+      </article>
+      <article class="spec-card">
+        <span class="mono" aria-hidden="true">МС</span>
+        <h3>Марина Соколова</h3>
+        <p class="role">Врач-косметолог, дерматолог</p>
+        <span class="exp">Стаж 11 лет</span>
+        <div class="chips"><span>Аппаратная косметология</span><span>RF-лифтинг</span><span>IPL-терапия</span></div>
+        <a class="book" href="#price">Расписание и запись</a>
+      </article>
+      <article class="spec-card">
+        <span class="mono" aria-hidden="true">ЕК</span>
+        <h3>Елена Ким</h3>
+        <p class="role">Врач-косметолог</p>
+        <span class="exp">Стаж 9 лет</span>
+        <div class="chips"><span>HydraFacial</span><span>Уходовые программы</span><span>Лечение акне</span></div>
+        <a class="book" href="#price">Расписание и запись</a>
+      </article>
+      <article class="spec-card">
+        <span class="mono" aria-hidden="true">ОД</span>
+        <h3>Ольга Дёмина</h3>
+        <p class="role">Врач-дерматовенеролог</p>
+        <span class="exp">Стаж 13 лет</span>
+        <div class="chips"><span>Лазерная эпиляция</span><span>Удаление новообразований</span><span>Дерматоскопия</span></div>
+        <a class="book" href="#price">Расписание и запись</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="promo">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="num">05 / Акции и сертификаты</span>
+        <h2>Спокойные предложения<br>без давления</h2>
+        <p class="lead">Акции действуют на конкретные услуги и не отменяют консультацию врача. Сертификат можно потратить на любую процедуру из прайса.</p>
+      </div>
+    </div>
+    <div class="promos">
+      <article class="promo">
+        <span class="badge">−20%</span>
+        <h3>Первое знакомство с клиникой</h3>
+        <p>Скидка на первую аппаратную процедуру после консультации врача-косметолога.</p>
+        <span class="until">До 31 декабря · по предварительной записи</span>
+      </article>
+      <article class="promo">
+        <span class="badge">Курс</span>
+        <h3>Пять сеансов RF-лифтинга</h3>
+        <p>Курс микроигольчатого RF-лифтинга на одну зону по цене четырёх процедур.</p>
+        <span class="until">Действует 6 месяцев с даты покупки</span>
+      </article>
+      <article class="promo">
+        <span class="badge">3 + 1</span>
+        <h3>Лазерная эпиляция</h3>
+        <p>Четвёртая процедура в курсе — в подарок при покупке курса на одну зону.</p>
+        <span class="until">Запись открыта на ноябрь–декабрь</span>
+      </article>
+    </div>
+    <div class="gift">
+      <div>
+        <h3>Подарочный сертификат</h3>
+        <p>Номинал на выбор: 5 000, 10 000 или 15 000 ₽. Сертификат оформляется на приёме или по телефону, действует 12 месяцев и не привязан к конкретной процедуре.</p>
+      </div>
+      <button class="btn" type="button" data-open-booking>Оформить сертификат</button>
+    </div>
+  </div>
+</section>
+
+<section id="price" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="num">06 / Прайс</span>
+        <h2>Стоимость процедур</h2>
+        <p class="lead">Цены указаны за одну процедуру, если не сказано иное. Итоговую стоимость курса врач фиксирует в плане лечения.</p>
+      </div>
+    </div>
+    <div class="price-bar" role="group" aria-label="Фильтр прайса по направлению">
+      <button class="tab" type="button" data-filter="all" aria-pressed="true">Все услуги</button>
+      <button class="tab" type="button" data-filter="inj" aria-pressed="false">Инъекционная</button>
+      <button class="tab" type="button" data-filter="laser" aria-pressed="false">Лазерная</button>
+      <button class="tab" type="button" data-filter="est" aria-pressed="false">Эстетическая</button>
+      <button class="tab" type="button" data-filter="dev" aria-pressed="false">Аппаратная</button>
+      <button class="tab" type="button" data-filter="acne" aria-pressed="false">Акне и постакне</button>
+    </div>
+    <div class="price-list" id="pricelist" aria-live="polite">
+      <div class="price-row" data-group="inj"><span class="grp">Инъекционная косметология</span><strong>Биоревитализация, 1 зона</strong><span class="d">40–60 мин</span><span class="p">12 000 ₽</span></div>
+      <div class="price-row" data-group="inj"><span class="grp">Инъекционная косметология</span><strong>Ботулинотерапия, 1 зона</strong><span class="d">30 мин</span><span class="p">8 500 ₽</span></div>
+      <div class="price-row" data-group="inj"><span class="grp">Инъекционная косметология</span><strong>Плазмотерапия, 1 процедура</strong><span class="d">50 мин</span><span class="p">7 900 ₽</span></div>
+      <div class="price-row" data-group="inj"><span class="grp">Инъекционная косметология</span><strong>Коллагенотерапия</strong><span class="d">40 мин</span><span class="p">14 500 ₽</span></div>
+      <div class="price-row" data-group="inj"><span class="grp">Инъекционная косметология</span><strong>Мезотерапия лица</strong><span class="d">40 мин</span><span class="p">5 900 ₽</span></div>
+      <div class="price-row" data-group="inj"><span class="grp">Инъекционная косметология</span><strong>Контурная пластика, 1 мл</strong><span class="d">45 мин</span><span class="p">16 000 ₽</span></div>
+      <div class="price-row" data-group="laser"><span class="grp">Лазерная косметология</span><strong>Лазерная шлифовка, лицо</strong><span class="d">60–90 мин</span><span class="p">24 000 ₽</span></div>
+      <div class="price-row" data-group="laser"><span class="grp">Лазерная косметология</span><strong>Лазерное омоложение</strong><span class="d">45 мин</span><span class="p">15 000 ₽</span></div>
+      <div class="price-row" data-group="laser"><span class="grp">Лазерная косметология</span><strong>Удаление рубцов, шрамов и пигментных пятен, 1 зона</strong><span class="d">30–60 мин</span><span class="p">6 500 ₽</span></div>
+      <div class="price-row" data-group="laser"><span class="grp">Лазерная косметология</span><strong>Лечение постакне, 1 процедура</strong><span class="d">40 мин</span><span class="p">9 800 ₽</span></div>
+      <div class="price-row" data-group="laser"><span class="grp">Лазерная косметология</span><strong>Лазерная эпиляция, подмышечные впадины</strong><span class="d">15 мин</span><span class="p">3 500 ₽</span></div>
+      <div class="price-row" data-group="est"><span class="grp">Эстетическая косметология</span><strong>Комплексный уход за лицом</strong><span class="d">60–90 мин</span><span class="p">6 900 ₽</span></div>
+      <div class="price-row" data-group="est"><span class="grp">Эстетическая косметология</span><strong>Комплексный уход за телом</strong><span class="d">60–90 мин</span><span class="p">8 400 ₽</span></div>
+      <div class="price-row" data-group="est"><span class="grp">Эстетическая косметология</span><strong>Неинвазивная карбокситерапия</strong><span class="d">40 мин</span><span class="p">4 500 ₽</span></div>
+      <div class="price-row" data-group="est"><span class="grp">Эстетическая косметология</span><strong>HydraFacial</strong><span class="d">60 мин</span><span class="p">9 500 ₽</span></div>
+      <div class="price-row" data-group="dev"><span class="grp">Аппаратная косметология</span><strong>Ультразвуковой SMAS-лифтинг, лицо</strong><span class="d">60–90 мин</span><span class="p">28 000 ₽</span></div>
+      <div class="price-row" data-group="dev"><span class="grp">Аппаратная косметология</span><strong>Фототерапия, 1 зона</strong><span class="d">30 мин</span><span class="p">7 500 ₽</span></div>
+      <div class="price-row" data-group="dev"><span class="grp">Аппаратная косметология</span><strong>IPL-терапия, 1 зона</strong><span class="d">30–45 мин</span><span class="p">8 900 ₽</span></div>
+      <div class="price-row" data-group="dev"><span class="grp">Аппаратная косметология</span><strong>Микроигольчатый RF-лифтинг, лицо</strong><span class="d">60 мин</span><span class="p">11 000 ₽</span></div>
+      <div class="price-row" data-group="dev"><span class="grp">Аппаратная косметология</span><strong>Лазерная эпиляция, 1 зона</strong><span class="d">15–60 мин</span><span class="p">3 500 ₽</span></div>
+      <div class="price-row" data-group="acne"><span class="grp">Лечение акне и постакне</span><strong>Консультация дерматолога</strong><span class="d">40 мин</span><span class="p">2 500 ₽</span></div>
+      <div class="price-row" data-group="acne"><span class="grp">Лечение акне и постакне</span><strong>Программа лечения акне, месяц ведения</strong><span class="d">по плану</span><span class="p">от 18 000 ₽</span></div>
+    </div>
+    <p class="price-note">Прайс не является публичной офертой: стоимость может отличаться в зависимости от препарата, площади зоны и количества процедур. Актуальные цены подтверждает администратор при записи.</p>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="num">07 / Контакты</span>
+        <h2>Как нас найти</h2>
+        <p class="lead">Клиника в центре Екатеринбурга, в пяти минутах от метро. Есть парковка для пациентов.</p>
+      </div>
+      <button class="btn" type="button" data-open-booking>Записаться</button>
+    </div>
+    <div class="contact-grid">
+      <div class="info">
+        <dl>
+          <dt>Адрес</dt><dd>г. Екатеринбург, ул. Примерная, 12, 2 этаж</dd>
+          <dt>Телефон</dt><dd><a href="tel:+73430000000">+7 (343) 000-00-00</a></dd>
+          <dt>E-mail</dt><dd><a href="mailto:info@example.ru">info@example.ru</a></dd>
+          <dt>Часы работы</dt><dd>Пн–Сб 9:00–21:00<br>Вс 10:00–18:00</dd>
+          <dt>Соцсети</dt><dd><a href="https://vk.com" target="_blank" rel="noopener">ВКонтакте</a> · <a href="https://t.me" target="_blank" rel="noopener">Telegram</a></dd>
+        </dl>
+        <div class="req">
+          ООО «Аурея» · ИНН 0000000000 · ОГРН 0000000000000<br>
+          Юридический адрес: г. Екатеринбург, ул. Примерная, 12<br>
+          Лицензия на осуществление медицинской деятельности № ЛО-00-00-000000 от 01.01.2012
+        </div>
+      </div>
+      <div class="map">
+        <div class="art" role="img" aria-label="Схема расположения клиники на карте"><span>ул. Примерная, 12</span></div>
+        <div class="foot">
+          <span>5 минут от метро «Площадь 1905 года»</span>
+          <a class="btn ghost small" href="https://yandex.ru/maps" target="_blank" rel="noopener">Открыть в Яндекс.Картах</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="num">Отзывы</span>
+        <h2>Что говорят пациенты</h2>
+      </div>
+      <a class="btn ghost" href="https://yandex.ru/maps" target="_blank" rel="noopener">Все отзывы на карте</a>
+    </div>
+    <div class="reviews">
+      <article class="review">
+        <span class="stars" aria-label="Оценка 5 из 5">★★★★★</span>
+        <p>Пришла за лазерной эпиляцией, а в итоге прошла консультацию дерматолога и курс лечения акне. Никто не навязывал лишнего, всё объяснили по шагам.</p>
+        <footer>Ирина, 29 лет · лазерная эпиляция</footer>
+      </article>
+      <article class="review">
+        <span class="stars" aria-label="Оценка 5 из 5">★★★★★</span>
+        <p>Делала SMAS-лифтинг у Марины Сергеевны. Понравилось, что сразу сказали, сколько процедур нужно и какой результат реально ждать.</p>
+        <footer>Наталья, 44 года · SMAS-лифтинг</footer>
+      </article>
+      <article class="review">
+        <span class="stars" aria-label="Оценка 5 из 5">★★★★★</span>
+        <p>Хожу на HydraFacial перед мероприятиями. Кожа спокойная, отёков нет, и всегда есть свободное время в расписании.</p>
+        <footer>Анна, 34 года · HydraFacial</footer>
+      </article>
+    </div>
+    <p class="reviews-note">Отзывы приведены как пример оформления раздела — перед публикацией замените их реальными отзывами пациентов.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true">А</span><span><b>Аурея</b><small>клиника эстетической медицины</small></span></a>
+        <p style="margin-top:16px;max-width:32ch">Ваше здоровье — наш приоритет. Медицинская косметология в Екатеринбурге с 2012 года.</p>
+        <div class="socials" style="margin-top:14px"><a href="https://vk.com" target="_blank" rel="noopener">ВКонтакте</a><a href="https://t.me" target="_blank" rel="noopener">Telegram</a></div>
+      </div>
+      <div>
+        <h4>Клиника</h4>
+        <ul>
+          <li><a href="#about">О клинике</a></li>
+          <li><a href="#doctors">Специалисты</a></li>
+          <li><a href="#equipment">Оборудование</a></li>
+          <li><a href="#promo">Акции и сертификаты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Пациентам</h4>
+        <ul>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#price">Прайс</a></li>
+          <li><a href="#about">Правила предоставления услуг</a></li>
+          <li><a href="#about">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li>г. Екатеринбург, ул. Примерная, 12</li>
+          <li><a href="tel:+73430000000">+7 (343) 000-00-00</a></li>
+          <li><a href="mailto:info@example.ru">info@example.ru</a></li>
+          <li>Пн–Сб 9:00–21:00, Вс 10:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Клиника «Аурея». Имеются противопоказания, необходима консультация специалиста.</span>
+      <span>Демонстрационный макет: адрес, телефоны, имена врачей, цены и отзывы — примеры для наполнения.</span>
+    </div>
+  </div>
+</footer>
+
+<dialog id="booking" aria-labelledby="booking-title">
+  <div class="dlg">
+    <button class="close" type="button" data-close-booking aria-label="Закрыть окно">✕</button>
+    <h3 id="booking-title">Запись на консультацию</h3>
+    <p>Онлайн-запись на этом макете не подключена. Позвоните — администратор подберёт время и врача.</p>
+    <a class="phone" href="tel:+73430000000">+7 (343) 000-00-00</a>
+    <dl>
+      <dt>Адрес</dt><dd>г. Екатеринбург, ул. Примерная, 12</dd>
+      <dt>Часы работы</dt><dd>Пн–Сб 9:00–21:00, Вс 10:00–18:00</dd>
+      <dt>Почта</dt><dd>info@example.ru</dd>
+    </dl>
+    <p class="note">Скажите администратору направление — например, «лазерная эпиляция» или «консультация дерматолога», — и вам предложат ближайшее окно.</p>
+  </div>
+</dialog>
+
+<button class="to-top" type="button" aria-label="Наверх">↑</button>
+
+<script>
+(function(){
+  var burger = document.querySelector('.burger');
+  var nav = document.getElementById('mainnav');
+  if (burger && nav){
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.closest('a') && window.matchMedia('(max-width:1040px)').matches){
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded','false');
+        burger.setAttribute('aria-label','Открыть меню');
+      }
+    });
+  }
+
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slides img'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.slide-dots button'));
+  var idx = 0, timer = null;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n){
+    idx = (n + slides.length) % slides.length;
+    slides.forEach(function(img, i){ img.classList.toggle('on', i === idx); });
+    dots.forEach(function(d, i){
+      d.classList.toggle('on', i === idx);
+      d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+    });
+  }
+  function start(){
+    if (reduce || timer) return;
+    timer = setInterval(function(){ show(idx + 1); }, 5500);
+  }
+  function stop(){ if (timer){ clearInterval(timer); timer = null; } }
+  dots.forEach(function(d, i){
+    d.addEventListener('click', function(){ stop(); show(i); start(); });
+  });
+  var media = document.querySelector('.hero-media');
+  if (media){
+    media.addEventListener('mouseenter', stop);
+    media.addEventListener('mouseleave', start);
+  }
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  start();
+
+  var rotator = document.querySelector('.rotator');
+  if (rotator && !reduce){
+    var lines = Array.prototype.slice.call(rotator.querySelectorAll('span'));
+    var r = 0;
+    setInterval(function(){
+      lines[r].classList.remove('active');
+      r = (r + 1) % lines.length;
+      lines[r].classList.add('active');
+    }, 4200);
+  }
+
+  var svcBtns = Array.prototype.slice.call(document.querySelectorAll('.svc-btn'));
+  svcBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      svcBtns.forEach(function(other){
+        var p = document.getElementById(other.getAttribute('aria-controls'));
+        other.setAttribute('aria-expanded','false');
+        p.classList.remove('open');
+      });
+      if (!isOpen){
+        btn.setAttribute('aria-expanded','true');
+        panel.classList.add('open');
+      }
+    });
+  });
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#pricelist .price-row'));
+  var list = document.getElementById('pricelist');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var f = tab.getAttribute('data-filter');
+      tabs.forEach(function(t){ t.setAttribute('aria-pressed', t === tab ? 'true' : 'false'); });
+      var visible = 0;
+      rows.forEach(function(row){
+        var match = f === 'all' || row.getAttribute('data-group') === f;
+        row.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      var empty = document.getElementById('price-empty');
+      if (!visible){
+        if (!empty){
+          empty = document.createElement('p');
+          empty.id = 'price-empty';
+          empty.className = 'empty';
+          empty.textContent = 'В этом направлении пока нет услуг в прайсе.';
+          list.appendChild(empty);
+        }
+      } else if (empty){
+        empty.remove();
+      }
+    });
+  });
+
+  var dlg = document.getElementById('booking');
+  function openBooking(){
+    if (typeof dlg.showModal === 'function'){ dlg.showModal(); }
+    else { dlg.setAttribute('open',''); }
+  }
+  function closeBooking(){
+    if (typeof dlg.close === 'function'){ dlg.close(); }
+    else { dlg.removeAttribute('open'); }
+  }
+  document.querySelectorAll('[data-open-booking]').forEach(function(b){
+    b.addEventListener('click', openBooking);
+  });
+  document.querySelectorAll('[data-close-booking]').forEach(function(b){
+    b.addEventListener('click', closeBooking);
+  });
+  if (dlg){
+    dlg.addEventListener('click', function(e){
+      var box = dlg.querySelector('.dlg');
+      if (e.target === dlg || !box.contains(e.target)) closeBooking();
+    });
+  }
+
+  var toTop = document.querySelector('.to-top');
+  window.addEventListener('scroll', function(){
+    toTop.classList.toggle('show', window.scrollY > 700);
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  var anchors = Array.prototype.slice.call(document.querySelectorAll('nav.main a'));
+  var sections = anchors.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        anchors.forEach(function(a, i){
+          a.style.color = sections[i] === en.target ? 'var(--gold-deep)' : '';
+        });
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){ if (s) io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
